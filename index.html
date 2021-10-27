@@ -19,7 +19,7 @@
     <h2>Witaj <span id="name"></span>, zadania do wykonania na dziś:</h2>
     <div id="taskList"></div>
     <input type="text" name="" id="task">
-    <button id="dodaj" onclick="addTask()">Dodaj</button>
+    <button id="dodaj" onclick="validate()">Dodaj</button>
     <script>
         var colors = ["#ff9999", "#ffdb99", "#ffff99", "#99ff99", "#9999ff", "#9f1aff", "#f6bcf6"];
 
@@ -54,6 +54,17 @@
             });
 
             showTasks();
+        }
+        function validate() {
+            var value = document.getElementById("task").value;
+            if( value === "") {
+                alert("Musisz Wpisać zadanie");
+                return false;
+            }
+            else {
+                addTask();
+            }
+
         }
         function addTask() {
             let task = document.getElementById('task').value;
