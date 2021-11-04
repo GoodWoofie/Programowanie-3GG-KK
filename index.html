@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista zadań</title>
+<<<<<<< HEAD
     <style>
         body {
             background-color: #ff9999;
@@ -13,6 +14,8 @@
             text-align: center;
         }
     </style>
+=======
+>>>>>>> parent of c384115 (Changing background color added)
 </head>
 
 <body onload="init()">
@@ -22,17 +25,6 @@
     <input type="text" name="" id="task">
     <button id="dodaj" onclick="validate()">Dodaj</button>
     <script>
-        var colors = ["#ff9999", "#ffdb99", "#ffff99", "#99ff99", "#9999ff", "#9f1aff", "#f6bcf6"];
-
-        var i = 1;
-
-        window.setInterval(function () {
-            document.body.style.backgroundColor = colors[i];
-            i++;
-            if (i === colors.length) {
-                i = 0;
-            }
-        }, 1000);
 
         function init() {
             if (window.localStorage.getItem('name') == null) {
@@ -47,7 +39,7 @@
                     JSON.stringify(tasklist));
             }
             var input = document.getElementById("task");
-            input.addEventListener("keyup", function (event) {
+            input.addEventListener("keyup", function(event) {
                 if (event.keyCode === 13) {
                     event.preventDefault();
                     document.getElementById("dodaj").click();
