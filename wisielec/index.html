@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload='start()'>
+    Podaj literę <input type="text" id="guess"> <button onclick="check">Sprawdź</button><br>
+    <img id="picture" src=img0.jpg" alt="" style="width: 25%;"><br>
+    <span id="word"></span>    
+    <script>
+        var word;
+        var mask;
+        var attempts;
+        function start() {
+            word = prompt("podaj słowo: ");
+            mask = Array(word.length);
+            mask.fill(false);
+            attempts = 0;
+            showWord();
+        }
+        function check() {
+            let guess = document.getElementById('guess').value;
+            let found = false;
+            for(let i = 0; i<word.length; i++) {
+                if(word[i] == guess) {
+                    mask[i] = true;
+                    found = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
